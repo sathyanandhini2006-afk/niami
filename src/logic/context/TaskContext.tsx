@@ -1,3 +1,7 @@
+/**
+ * ARCHITECTURE INDICATOR: [CORE LOGIC]
+ * This context manages the global state for all task-related operations and data persistence.
+ */
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import type { Task, Category } from '../types';
