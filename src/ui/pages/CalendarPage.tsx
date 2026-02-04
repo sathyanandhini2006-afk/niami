@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, startOfWeek, endOfWeek } from 'date-fns';
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-react';
-import { useTasks } from '../context/TaskContext';
+import { useTasks } from '../../logic/context/TaskContext';
 
 export const CalendarPage = () => {
     const { tasks } = useTasks();

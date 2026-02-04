@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plus, CheckCircle, Circle } from 'lucide-react';
-import { useTasks } from '../../context/TaskContext';
+import { useTasks } from '../../../logic/context/TaskContext';
 
 export const TaskListPage = () => {
     const { tasks, toggleTaskStatus } = useTasks();

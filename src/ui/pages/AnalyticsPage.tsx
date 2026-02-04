@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
-import { useTasks } from '../context/TaskContext';
+import { useTasks } from '../../logic/context/TaskContext';
 import { TrendingUp, CheckCircle, Clock } from 'lucide-react';
 
 export const AnalyticsPage = () => {

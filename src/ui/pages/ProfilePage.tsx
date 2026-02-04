@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { User, LogOut } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
-import { useToast } from '../context/ToastContext';
+import { useAuth } from '../../logic/context/AuthContext';
+import { useToast } from '../../logic/context/ToastContext';
 import { useNavigate } from 'react-router-dom';
 
 export const ProfilePage = () => {

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import { Plus, CheckCircle, Clock, Calendar as CalendarIcon } from 'lucide-react';
-import { useTasks } from '../context/TaskContext';
+import { useTasks } from '../../logic/context/TaskContext';
 
 export const DashboardPage = () => {
     const { tasks } = useTasks();

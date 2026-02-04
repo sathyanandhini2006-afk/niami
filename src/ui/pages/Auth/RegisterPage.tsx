@@ -2,25 +2,30 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../../logic/context/AuthContext';
 
-const loginSchema = z.object({
+const registerSchema = z.object({
+    name: z.string().min(2, 'Name must be at least 2 characters'),
     email: z.string().email('Invalid email'),
-    password: z.string().min(1, 'Password required'),
+    password: z.string().min(6, 'Password must be at least 6 characters'),
+    confirmPassword: z.string(),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
 });
 
-type LoginFormData = z.infer<typeof loginSchema>;
+type RegisterFormData = z.infer<typeof registerSchema>;
 
-export const LoginPage = () => {
-    const { login } = useAuth();
+export const RegisterPage = () => {
+    const { register: registerUser } = useAuth();
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginFormData>({
-        resolver: zodResolver(loginSchema),
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<RegisterFormData>({
+        resolver: zodResolver(registerSchema),
     });
 
-    const onSubmit = async (data: LoginFormData) => {
-        const success = await login(data.email, data.password);
+    const onSubmit = async (data: RegisterFormData) => {
+        const success = await registerUser(data);
         if (success) navigate('/dashboard');
     };
 
@@ -35,7 +40,7 @@ export const LoginPage = () => {
         }}>
             <div className="glass-card" style={{
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '450px',
                 padding: '2.5rem',
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)'
             }}>
@@ -44,17 +49,48 @@ export const LoginPage = () => {
                     fontWeight: '800',
                     marginBottom: '0.5rem'
                 }}>
-                    Log in
+                    Sign up
                 </h1>
                 <p style={{
                     color: '#9a9a9a',
                     marginBottom: '2rem',
                     fontSize: '0.875rem'
                 }}>
-                    Welcome back to Milo
+                    Join millions of people who organize work and life with Milo
                 </p>
 
                 <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                    <div>
+                        <label style={{
+                            display: 'block',
+                            fontSize: '0.875rem',
+                            fontWeight: '600',
+                            color: '#ffffff',
+                            marginBottom: '0.5rem'
+                        }}>
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            {...register('name')}
+                            style={{
+                                width: '100%',
+                                padding: '0.75rem',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                borderRadius: '5px',
+                                color: '#ffffff',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                        />
+                        {errors.name && (
+                            <p style={{ color: '#dc4c3e', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+                                {errors.name.message}
+                            </p>
+                        )}
+                    </div>
+
                     <div>
                         <label style={{
                             display: 'block',
@@ -102,8 +138,8 @@ export const LoginPage = () => {
                             style={{
                                 width: '100%',
                                 padding: '0.75rem',
-                                background: '#1f1f1f',
-                                border: '1px solid #3a3a3a',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
                                 borderRadius: '5px',
                                 color: '#ffffff',
                                 fontSize: '1rem',
@@ -113,6 +149,37 @@ export const LoginPage = () => {
                         {errors.password && (
                             <p style={{ color: '#dc4c3e', fontSize: '0.75rem', marginTop: '0.5rem' }}>
                                 {errors.password.message}
+                            </p>
+                        )}
+                    </div>
+
+                    <div>
+                        <label style={{
+                            display: 'block',
+                            fontSize: '0.875rem',
+                            fontWeight: '600',
+                            color: '#ffffff',
+                            marginBottom: '0.5rem'
+                        }}>
+                            Confirm Password
+                        </label>
+                        <input
+                            type="password"
+                            {...register('confirmPassword')}
+                            style={{
+                                width: '100%',
+                                padding: '0.75rem',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                borderRadius: '5px',
+                                color: '#ffffff',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                        />
+                        {errors.confirmPassword && (
+                            <p style={{ color: '#dc4c3e', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+                                {errors.confirmPassword.message}
                             </p>
                         )}
                     </div>
@@ -134,7 +201,7 @@ export const LoginPage = () => {
                             marginTop: '0.5rem'
                         }}
                     >
-                        {isSubmitting ? 'Logging in...' : 'Log in'}
+                        {isSubmitting ? 'Creating account...' : 'Sign up'}
                     </button>
                 </form>
 
@@ -144,9 +211,9 @@ export const LoginPage = () => {
                     fontSize: '0.875rem',
                     color: '#9a9a9a'
                 }}>
-                    Don't have an account?{' '}
-                    <Link to="/register" style={{ color: '#dc4c3e', textDecoration: 'none', fontWeight: '600' }}>
-                        Sign up
+                    Already have an account?{' '}
+                    <Link to="/login" style={{ color: '#dc4c3e', textDecoration: 'none', fontWeight: '600' }}>
+                        Log in
                     </Link>
                 </div>
             </div>

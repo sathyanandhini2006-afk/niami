@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User, LogOut, Settings, HelpCircle, LayoutDashboard, ListTodo, Calendar, BarChart2, Edit3 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../../logic/context/AuthContext';
 
 export const Navbar = () => {
     const { user, logout } = useAuth();

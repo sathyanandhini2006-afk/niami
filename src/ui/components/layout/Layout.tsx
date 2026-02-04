@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from './Navbar';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../../logic/context/AuthContext';
 
 interface LayoutProps {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Flag, Tag, Trash2 } from 'lucide-react';
-import { useTasks } from '../../context/TaskContext';
-import { useToast } from '../../context/ToastContext';
+import { useTasks } from '../../../logic/context/TaskContext';
+import { useToast } from '../../../logic/context/ToastContext';
 
 export const TaskDetailsPage = () => {
     const { id } = useParams();

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Lock, ShieldCheck, ChevronRight, Hash, RotateCcw } from 'lucide-react';
 import { Button } from '../ui/Button';
-import { useAuth } from '../../context/AuthContext';
-import { useToast } from '../../context/ToastContext';
+import { useAuth } from '../../../logic/context/AuthContext';
+import { useToast } from '../../../logic/context/ToastContext';
 
 interface EmojiLockProps {
     mode: 'set' | 'unlock';

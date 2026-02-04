@@ -1,21 +1,37 @@
+import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { Calendar as CalendarIcon, Flag, Tag, X } from 'lucide-react';
-import { useTasks } from '../../context/TaskContext';
+import { X, Calendar as CalendarIcon, Flag, Tag } from 'lucide-react';
+import { useTasks } from '../../../logic/context/TaskContext';
+import { useToast } from '../../../logic/context/ToastContext';
 
-export const CreateTaskPage = () => {
+export const EditTaskPage = () => {
+    const { id } = useParams();
     const navigate = useNavigate();
-    const { createTask, categories } = useTasks();
-    const { register, handleSubmit } = useForm();
+    const { tasks, updateTask, categories } = useTasks();
+    const { addToast } = useToast();
+
+    const task = tasks.find(t => t.id === id);
+    const { register, handleSubmit } = useForm({
+        defaultValues: task
+    });
+
+    if (!task) {
+        return (
+            <div style={{
+                maxWidth: '700px',
+                margin: '0 auto',
+                padding: '3rem 1.5rem',
+                textAlign: 'center'
+            }}>
+                <h1 style={{ fontSize: '1.5rem', color: '#ffffff' }}>Task not found</h1>
+            </div>
+        );
+    }
 
     const onSubmit = async (data: any) => {
-        const success = await createTask({
-            ...data,
-            status: 'pending',
-        });
-        if (success) {
-            navigate('/dashboard');
-        }
+        await updateTask(task.id, data);
+        addToast('Task updated successfully', 'success');
+        navigate(`/tasks/${task.id}`);
     };
 
     return (
@@ -35,7 +51,7 @@ export const CreateTaskPage = () => {
                     fontWeight: 'bold',
                     color: '#ffffff'
                 }}>
-                    Add Task
+                    Edit Task
                 </h1>
                 <button
                     onClick={() => navigate(-1)}
@@ -69,7 +85,6 @@ export const CreateTaskPage = () => {
                     </label>
                     <input
                         {...register('title', { required: true })}
-                        placeholder="e.g., Buy groceries"
                         style={{
                             width: '100%',
                             padding: '0.75rem',
@@ -95,7 +110,6 @@ export const CreateTaskPage = () => {
                     </label>
                     <textarea
                         {...register('description')}
-                        placeholder="Add details..."
                         rows={3}
                         style={{
                             width: '100%',
@@ -152,7 +166,7 @@ export const CreateTaskPage = () => {
                             color: '#ffffff',
                             marginBottom: '0.5rem'
                         }}>
-                            Time (Optional)
+                            Time
                         </label>
                         <input
                             type="time"
@@ -273,7 +287,7 @@ export const CreateTaskPage = () => {
                             fontWeight: '600'
                         }}
                     >
-                        Add Task
+                        Save Changes
                     </button>
                 </div>
             </form>

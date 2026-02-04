@@ -1,29 +1,29 @@
 // import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { TaskProvider } from './context/TaskContext';
-import { ToastProvider } from './context/ToastContext';
-import { PrivateRoute } from './components/layout/PrivateRoute';
-import { Layout } from './components/layout/Layout';
+import { AuthProvider } from './logic/context/AuthContext';
+import { TaskProvider } from './logic/context/TaskContext';
+import { ToastProvider } from './logic/context/ToastContext';
+import { PrivateRoute } from './ui/components/layout/PrivateRoute';
+import { Layout } from './ui/components/layout/Layout';
 
 // Pages
-import { LandingPage } from './pages/LandingPage';
-import { LoginPage } from './pages/Auth/LoginPage';
-import { RegisterPage } from './pages/Auth/RegisterPage';
-import { DashboardPage } from './pages/DashboardPage';
-import { TaskListPage } from './pages/Tasks/TaskListPage';
-import { CreateTaskPage } from './pages/Tasks/CreateTaskPage';
-import { EditTaskPage } from './pages/Tasks/EditTaskPage';
-import { TaskDetailsPage } from './pages/Tasks/TaskDetailsPage';
-import { CategoriesPage } from './pages/CategoriesPage';
-import { CalendarPage } from './pages/CalendarPage';
-import { AnalyticsPage } from './pages/AnalyticsPage';
-import { ProfilePage } from './pages/ProfilePage';
-import { HelpPage } from './pages/HelpPage';
-import { WhiteboardPage } from './pages/WhiteboardPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { EmojiLock } from './components/auth/EmojiLock';
-import { useAuth } from './context/AuthContext';
+import { LandingPage } from './ui/pages/LandingPage';
+import { LoginPage } from './ui/pages/Auth/LoginPage';
+import { RegisterPage } from './ui/pages/Auth/RegisterPage';
+import { DashboardPage } from './ui/pages/DashboardPage';
+import { TaskListPage } from './ui/pages/Tasks/TaskListPage';
+import { CreateTaskPage } from './ui/pages/Tasks/CreateTaskPage';
+import { EditTaskPage } from './ui/pages/Tasks/EditTaskPage';
+import { TaskDetailsPage } from './ui/pages/Tasks/TaskDetailsPage';
+import { CategoriesPage } from './ui/pages/CategoriesPage';
+import { CalendarPage } from './ui/pages/CalendarPage';
+import { AnalyticsPage } from './ui/pages/AnalyticsPage';
+import { ProfilePage } from './ui/pages/ProfilePage';
+import { HelpPage } from './ui/pages/HelpPage';
+import { WhiteboardPage } from './ui/pages/WhiteboardPage';
+import { NotFoundPage } from './ui/pages/NotFoundPage';
+import { EmojiLock } from './ui/components/auth/EmojiLock';
+import { useAuth } from './logic/context/AuthContext';
 
 const App = () => {
   return (

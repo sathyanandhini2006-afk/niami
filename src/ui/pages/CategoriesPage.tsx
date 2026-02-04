@@ -1,7 +1,7 @@
 import { Plus, Trash2 } from 'lucide-react';
 import { useState } from 'react';
-import { useTasks } from '../context/TaskContext';
-import { useToast } from '../context/ToastContext';
+import { useTasks } from '../../logic/context/TaskContext';
+import { useToast } from '../../logic/context/ToastContext';
 
 export const CategoriesPage = () => {
     const { categories, createCategory, deleteCategory } = useTasks();

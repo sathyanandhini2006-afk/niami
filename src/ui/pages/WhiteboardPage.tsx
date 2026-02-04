@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { Download, Trash2 } from 'lucide-react';
-import { useToast } from '../context/ToastContext';
+import { useToast } from '../../logic/context/ToastContext';
 
 export const WhiteboardPage = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
