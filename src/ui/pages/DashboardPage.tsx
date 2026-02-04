@@ -1,3 +1,7 @@
+/**
+ * ARCHITECTURE INDICATOR: [UI LAYER - PAGE]
+ * This component handles the visual rendering of the user's daily dashboard.
+ */
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import { Plus, CheckCircle, Clock, Calendar as CalendarIcon } from 'lucide-react';

@@ -1,4 +1,13 @@
+/**
+ * ARCHITECTURE INDICATOR: [UI LAYER]
+ * This is the root component that defines the visual structure and routing of the application.
+ */
 // import React from 'react';
+/**
+ * ARCHITECTURE INDICATOR: [CORE LOGIC]
+ * This context manages the global state for all task-related operations.
+ */
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './logic/context/AuthContext';
 import { TaskProvider } from './logic/context/TaskContext';
