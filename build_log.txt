@@ -1,0 +1,67 @@
+﻿
+> smart-todo-manager@0.0.0 build
+> tsc -b && vite build
+
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/layout/PrivateRoute.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/ui/Button.tsx(1,17): error TS1484: 'ButtonHTMLAttributes' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ui/Button.tsx(4,25): error TS2307: Cannot find module 'tailwind-merge' or its corresponding type declarations.
+src/components/ui/Button.tsx(26,21): error TS2345: Argument of type '{ 'btn-primary': boolean; 'btn-secondary': boolean; 'btn-danger': boolean; 'bg-transparent hover:bg-white/5': boolean; 'text-sm px-3 py-1': boolean; 'px-4 py-2': boolean; 'text-lg px-6 py-3': boolean; 'opacity-50 cursor-not-allowed': boolean | undefined; }' is not assignable to parameter of type 'string | false | null | undefined'.
+src/components/ui/Card.tsx(1,17): error TS1484: 'HTMLAttributes' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ui/Card.tsx(21,17): error TS2345: Argument of type '{ 'bg-primary/10 text-primary': boolean; 'bg-white/10 text-white': boolean; 'bg-green-500/10 text-green-400': boolean; 'bg-yellow-500/10 text-yellow-400': boolean; 'bg-red-500/10 text-red-400': boolean; 'border border-border text-muted': boolean; }' is not assignable to parameter of type 'string | false | null | undefined'.
+src/components/ui/Input.tsx(1,17): error TS1484: 'InputHTMLAttributes' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ui/Input.tsx(1,38): error TS1484: 'TextareaHTMLAttributes' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ui/Input.tsx(29,25): error TS2345: Argument of type '{ 'border-danger focus:ring-danger/20': string | undefined; }' is not assignable to parameter of type 'string | false | null | undefined'.
+src/components/ui/Input.tsx(56,25): error TS2345: Argument of type '{ 'border-danger focus:ring-danger/20': string | undefined; }' is not assignable to parameter of type 'string | false | null | undefined'.
+src/components/ui/Modal.tsx(37,21): error TS2345: Argument of type '{ 'max-w-md': boolean; 'max-w-lg': boolean; 'max-w-4xl': boolean; }' is not assignable to parameter of type 'string | false | null | undefined'.
+src/context/AuthContext.tsx(1,65): error TS1484: 'ReactNode' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/AuthContext.tsx(2,10): error TS1484: 'User' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/AuthContext.tsx(2,16): error TS1484: 'ApiResponse' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/AuthContext.tsx(2,16): error TS6133: 'ApiResponse' is declared but its value is never read.
+src/context/TaskContext.tsx(1,65): error TS1484: 'ReactNode' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/TaskContext.tsx(2,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/TaskContext.tsx(2,16): error TS1484: 'Category' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/TaskContext.tsx(104,18): error TS2345: Argument of type '(prev: Task[]) => { status: string; updatedAt: string; id: string; userId: string; title: string; description?: string | undefined; dueDate: string; dueTime?: string | undefined; priority: Priority; ... 5 more ...; createdAt: string; }[]' is not assignable to parameter of type 'SetStateAction<Task[]>'.
+  Type '(prev: Task[]) => { status: string; updatedAt: string; id: string; userId: string; title: string; description?: string | undefined; dueDate: string; dueTime?: string | undefined; priority: Priority; ... 5 more ...; createdAt: string; }[]' is not assignable to type '(prevState: Task[]) => Task[]'.
+    Type '{ status: string; updatedAt: string; id: string; userId: string; title: string; description?: string | undefined; dueDate: string; dueTime?: string | undefined; priority: Priority; ... 5 more ...; createdAt: string; }[]' is not assignable to type 'Task[]'.
+      Type '{ status: string; updatedAt: string; id: string; userId: string; title: string; description?: string; dueDate: string; dueTime?: string; priority: Priority; categoryId?: string; ... 4 more ...; createdAt: string; }' is not assignable to type 'Task'.
+        Types of property 'status' are incompatible.
+          Type 'string' is not assignable to type 'Status'.
+src/context/TaskContext.tsx(106,53): error TS2345: Argument of type '{ status: string; updatedAt: string; id: string; userId: string; title: string; description?: string; dueDate: string; dueTime?: string; priority: Priority; categoryId?: string; ... 4 more ...; createdAt: string; }' is not assignable to parameter of type 'Task'.
+  Types of property 'status' are incompatible.
+    Type 'string' is not assignable to type 'Status'.
+src/context/ToastContext.tsx(1,67): error TS1484: 'ReactNode' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/context/ToastContext.tsx(3,1): error TS6133: 'clsx' is declared but its value is never read.
+src/pages/AnalyticsPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/AnalyticsPage.tsx(58,50): error TS6133: 'entry' is declared but its value is never read.
+src/pages/AnalyticsPage.tsx(86,52): error TS6133: 'entry' is declared but its value is never read.
+src/pages/Auth/LoginPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Auth/LoginPage.tsx(3,29): error TS2307: Cannot find module '@hookform/resolvers/zod' or its corresponding type declarations.
+src/pages/Auth/RegisterPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Auth/RegisterPage.tsx(3,29): error TS2307: Cannot find module '@hookform/resolvers/zod' or its corresponding type declarations.
+src/pages/CalendarPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/CalendarPage.tsx(65,37): error TS6133: 'i' is declared but its value is never read.
+src/pages/CategoriesPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/CategoriesPage.tsx(4,24): error TS6133: 'Tag' is declared but its value is never read.
+src/pages/DashboardPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/HelpPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/HelpPage.tsx(3,40): error TS6133: 'Check' is declared but its value is never read.
+src/pages/HelpPage.tsx(33,23): error TS6133: 'data' is declared but its value is never read.
+src/pages/LandingPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/NotFoundPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/ProfilePage.tsx(4,16): error TS6133: 'LogOut' is declared but its value is never read.
+src/pages/Tasks/CreateTaskPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/CreateTaskPage.tsx(9,1): error TS6133: 'Task' is declared but its value is never read.
+src/pages/Tasks/CreateTaskPage.tsx(9,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Tasks/EditTaskPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/TaskDetailsPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/TaskDetailsPage.tsx(10,23): error TS2307: Cannot find module '../../components/ui/Badge' or its corresponding type declarations.
+src/pages/Tasks/TaskListPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/TaskListPage.tsx(10,23): error TS2307: Cannot find module '../../components/ui/Badge' or its corresponding type declarations.
+src/pages/Tasks/TaskListPage.tsx(12,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Tasks/TaskListPage.tsx(146,26): error TS2304: Cannot find name 'CheckSquare'.
+src/pages/Tasks/TaskListPage.tsx(190,42): error TS2304: Cannot find name 'CalendarIcon'.
+src/services/storage.ts(1,10): error TS1484: 'User' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/storage.ts(1,16): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/storage.ts(1,22): error TS1484: 'Category' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/storage.ts(1,32): error TS1484: 'ApiResponse' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.

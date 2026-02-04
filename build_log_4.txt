@@ -1,0 +1,8 @@
+﻿
+> smart-todo-manager@0.0.0 build
+> tsc -b && vite build
+
+src/components/layout/PrivateRoute.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Auth/LoginPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Auth/RegisterPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/ProfilePage.tsx(16,45): error TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.

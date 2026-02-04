@@ -1,0 +1,27 @@
+﻿
+> smart-todo-manager@0.0.0 build
+> tsc -b && vite build
+
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/layout/PrivateRoute.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/context/AuthContext.tsx(3,21): error TS6196: 'ApiResponse' is declared but never used.
+src/pages/AnalyticsPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/AnalyticsPage.tsx(58,50): error TS6133: 'entry' is declared but its value is never read.
+src/pages/AnalyticsPage.tsx(86,52): error TS6133: 'entry' is declared but its value is never read.
+src/pages/Auth/LoginPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Auth/RegisterPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/CalendarPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/CalendarPage.tsx(65,37): error TS6133: 'i' is declared but its value is never read.
+src/pages/CategoriesPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/CategoriesPage.tsx(4,24): error TS6133: 'Tag' is declared but its value is never read.
+src/pages/DashboardPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/HelpPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/HelpPage.tsx(3,40): error TS6133: 'Check' is declared but its value is never read.
+src/pages/HelpPage.tsx(33,23): error TS6133: 'data' is declared but its value is never read.
+src/pages/LandingPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/NotFoundPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/ProfilePage.tsx(4,16): error TS6133: 'LogOut' is declared but its value is never read.
+src/pages/Tasks/CreateTaskPage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/EditTaskPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/TaskDetailsPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/pages/Tasks/TaskListPage.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
